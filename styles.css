@@ -1,0 +1,321 @@
+@font-face{
+    src: url(fonts/Roboto-Medium.ttf) format('truetype');
+    font-family: 'RobotoMedium';
+}
+
+@font-face{
+    src: url(fonts/Roboto-Regular.ttf) format('truetype');
+    font-family: 'RobotoRegular';
+}
+
+@font-face{
+    src: url(fonts/Roboto-Bold.ttf) format('truetype');
+    font-family: 'RobotoBold';
+}
+
+@font-face{
+    src: url(fonts/Cookie-Regular.ttf) format('truetype');
+    font-family: 'CookieRegular';
+}
+
+* {
+    font-family: RobotoRegular;
+}
+
+body {
+    background: #c53c73;
+    background: -webkit-linear-gradient(left, #F44336 , #9C27B0);
+    background: -o-linear-gradient(right, #F44336, #9C27B0);
+    background: -moz-linear-gradient(right, #F44336, #9C27B0);
+    background: linear-gradient(to right, #F44336 , #9C27B0);
+    margin: 0;
+    padding: 48px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+h3 {
+    color: #fff;
+    font-family: RobotoMedium;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+a {
+    color: white;
+    font-family: RobotoRegular;
+    /*font-size: 15px;*/
+    /*padding-bottom: 12px;
+    padding-top: 6px;*/
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    text-align: justify;
+    text-overflow: ellipsis;
+    width: 512px;
+}
+
+li img {
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 128px;
+}
+
+li div {
+    bottom: 0;
+    height: 128px;
+    margin-bottom: auto;
+    margin-left: 144px;
+    margin-right: 24px;
+    margin-top: auto;
+    position: absolute;
+    top: 0;
+}
+
+li h3 {
+    color: #000;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+li a {
+    bottom: 6px;
+    font-family: RobotoBold;
+    /*font-weight: bold;*/
+    position: absolute;
+}
+
+li p {
+    font-size: 16px;
+}
+
+li:nth-of-type(1) a {
+    color: #34495e;
+}
+
+li:nth-of-type(2) a {
+    color: #d35400;
+}
+
+h3:nth-of-type(2) {
+    margin-top: 90px;
+}
+
+h3:nth-of-type(3) {
+    margin-top: 120px;
+}
+
+#privacy-policy {
+    margin: auto;
+    margin-bottom: 24px;
+    padding: 24px;
+    position: relative;
+    width: 1200px;
+}
+
+#logo {
+    margin: auto;
+}
+
+#logo h1 {
+    bottom: 0;
+    color: white;
+    font-family: CookieRegular;
+    font-size: 60px;
+    font-style: italic;
+    /*height: 60px;*/
+    text-align: center;
+    text-decoration: underline;
+    /*line-height: 48px;*/
+    top: 0;
+}
+
+#logo:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.card {
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2),
+        0 9px 24px 0 rgba(0, 0, 0, 0.2);
+    margin: 18px;
+    padding: 18px;
+}
+
+.app-icon {
+    left: 50%;
+    margin-left: -96px;
+    margin-top: -96px;
+    opacity: 0.2;
+    position: fixed;
+    top: 50%;
+    width: 192px;
+}
+
+.app-content {
+    margin: auto;
+    margin-bottom: 24px;
+    padding: 5vw;
+    position: relative;
+    width: 1200px;
+}
+
+.google-play {
+    width: auto;
+}
+
+.google-play img {
+    width: 384px;
+}
+
+@media screen and (max-width: 1280px) {
+
+    h3:nth-of-type(2) {
+        margin-top: 20px;
+    }
+
+    #privacy-policy, .app-content {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    #logo {
+        margin: auto;
+        width: 320px;
+    }
+
+    #logo img {
+        float: left;
+        height: 96px;
+        width: 96px;
+    }
+
+    #logo h1 {
+        font-size: 48px;
+        height: 48px;
+        /*line-height: 36px;*/
+    }
+
+    li {
+        height: 108px;
+        width: 384px;
+    }
+
+    li img {
+        width: 96px;
+    }
+
+    li div {
+        height: 120px;
+        margin-left: 108px;
+    }
+
+    li h3 {
+       font-size: 20px;
+    }
+
+    li p {
+        margin-top: 6px;
+    }
+
+    .google-play img {
+        width: 256px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    body {
+        padding: 12px;
+    }
+
+    #logo {
+        margin: auto;
+        width: 240px;
+    }
+
+    #logo img {
+        float: left;
+        height: 60px;
+        width: 60px;
+    }
+
+    #logo h1 {
+        font-size: 36px;
+        height: 36px;
+        /*line-height: 12px;*/
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    li {
+        height: 108px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    li img {
+        height: 60px;
+        margin-top: 6.25%;
+        width: 60px;
+    }
+
+    li div {
+        height: 120px;
+        margin-left: 72px;
+        margin-right: 24px;
+    }
+
+    li h3 {
+       font-size: 20px;
+    }
+
+    li p {
+        font-size: 15px;
+        margin-top: 6px;
+        max-height: 52px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    li a {
+        font-size: 15px;
+    }
+
+    #privacy-policy, .app-content p {
+        font-size: 15px;
+    }
+
+    .app-icon {
+        margin-left: -64px;
+        margin-top: -64px;
+        width: 128px;
+    }
+
+    .google-play img {
+        width: 192px;
+    }
+}
