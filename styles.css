@@ -162,8 +162,8 @@ h3:nth-of-type(3) {
     left: 50%;
     margin-left: -96px;
     margin-top: -96px;
-    opacity: 0.2;
-    position: fixed;
+    opacity: 0.15;
+    position: absolute;
     top: 50%;
     width: 192px;
 }
@@ -184,6 +184,11 @@ h3:nth-of-type(3) {
     width: 384px;
 }
 
+.main-page {
+    margin-top: 64px;
+    width: 96px;
+}
+
 @media screen and (max-width: 1280px) {
 
     h3:nth-of-type(2) {
@@ -196,6 +201,10 @@ h3:nth-of-type(3) {
 
     #privacy-policy, .app-content {
         width: auto;
+    }
+
+    .google-play img {
+        width: 320px;
     }
 }
 
@@ -241,6 +250,11 @@ h3:nth-of-type(3) {
 
     .google-play img {
         width: 256px;
+    }
+
+    .main-page {
+        margin-top: 32px;
+        width: 64px;
     }
 }
 
