@@ -23,10 +23,12 @@
 }
 
 body {
+/*
     background: #c53c73;
     background: -webkit-linear-gradient(left, #F44336, #F44336, #9C27B0, #9C27B0);
     background: -o-linear-gradient(right, #F44336, #F44336, #9C27B0, #9C27B0);
     background: -moz-linear-gradient(right, #F44336, #F44336, #9C27B0, #9C27B0);
+*/
     background: linear-gradient(to right, #F44336, #F44336, #9C27B0, #9C27B0);
     margin: 0;
     padding: 48px;
@@ -111,6 +113,10 @@ li:nth-of-type(2) a {
     color: #d35400;
 }
 
+li:nth-of-type(3) a {
+    color: #2f343e;
+}
+
 h3:nth-of-type(2) {
     margin-top: 60px;
 }
@@ -127,11 +133,8 @@ h3:nth-of-type(3) {
 #logo h1 {
     bottom: 0;
     color: white;
-    font-family: CookieRegular;
     font-size: 60px;
-    font-style: italic;
     text-align: center;
-    text-decoration: underline;
     top: 0;
 }
 

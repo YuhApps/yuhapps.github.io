@@ -5,15 +5,22 @@
         <link href="styles.css" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>YUH APPS</title>
+	<style>
+		#logo h1 {
+			font-family: CookieRegular;
+			font-style: italic;
+    			text-decoration: underline;
+		}
+	</style>
     </head>
     <body>
         <div id="logo">
             <h1>YUH APPS</h1>
         </div>
-        <h3>Featured apps for Android</h3>
+        <h3>Featured apps</h3>
         <ul id="apps">
             <li class="card"  onclick="window.location = 'backup.html'" style="cursor: pointer">
-                <img src="backup.png">
+                <img src="backup_android.png">
                 <div>
                     <h3>Back up</h3>
                     <p>Back up and restore your Messages, Call logs, Wifi passwords, Bluetooth data and Applications.</p>
@@ -21,11 +28,19 @@
                 </div>
             </li>
             <li class="card"  onclick="window.location = 'rotation_lock.html'" style="cursor: pointer">
-                <img src="rotation_lock.png">
+                <img src="rotation_lock_android.png">
                 <div>
                     <h3>Rotation Lock</h3>
                     <p>Lock your device screen orientation to any angle.</p>
                     <a href="rotation_lock.html">More details...</a>
+                </div>
+            </li>
+            <li class="card"  onclick="window.location = 'advanced_ntp.html'" style="cursor: pointer">
+                <img src="antp.png">
+                <div>
+                    <h3>Advanced NTP</h3>
+                    <p>Give your Chrome New Tab Page a fresh new look.</p>
+                    <a href="antp.html">More details...</a>
                 </div>
             </li>
         </ul>
