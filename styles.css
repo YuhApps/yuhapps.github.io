@@ -1,25 +1,28 @@
-@font-face{
+/* @font-face{
     src: url(fonts/Roboto-Medium.ttf) format('truetype');
-    font-family: 'RobotoMedium';
-}
+    font-family: 'Roboto';
+    font-weight: normal;
+} */
 
 @font-face{
     src: url(fonts/Roboto-Regular.ttf) format('truetype');
-    font-family: 'RobotoRegular';
+    font-family: 'Roboto';
+    font-weight: normal;
 }
 
 @font-face{
     src: url(fonts/Roboto-Bold.ttf) format('truetype');
-    font-family: 'RobotoBold';
+    font-family: 'Roboto';
+    font-weight: bold;
 }
 
 @font-face{
     src: url(fonts/Cookie-Regular.ttf) format('truetype');
-    font-family: 'CookieRegular';
+    font-family: 'Cookie';
 }
 
 * {
-    font-family: RobotoRegular;
+    font-family: 'Roboto';
 }
 
 body {
@@ -29,6 +32,7 @@ body {
     background: -o-linear-gradient(right, #F44336, #F44336, #9C27B0, #9C27B0);
     background: -moz-linear-gradient(right, #F44336, #F44336, #9C27B0, #9C27B0);
 */
+    background: #c53c73;
     background: linear-gradient(to right, #F44336, #F44336, #9C27B0, #9C27B0);
     margin: 0;
     padding: 48px;
@@ -42,14 +46,15 @@ p {
 
 h3 {
     color: #fff;
-    font-family: RobotoMedium;
+    font-family: 'Roboto';
     font-size: 30px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 a {
     color: white;
-    font-family: RobotoRegular;
+    font-family: 'Roboto';
+    font-weight: bold;
     /*font-size: 15px;*/
     /*padding-bottom: 12px;
     padding-top: 6px;*/
@@ -97,7 +102,8 @@ li h3 {
 
 li a {
     bottom: 6px;
-    font-family: RobotoBold;
+    font-family: 'Roboto';
+    font-weight: bold;
     position: absolute;
 }
 
@@ -115,6 +121,10 @@ li:nth-of-type(2) a {
 
 li:nth-of-type(3) a {
     color: #2f343e;
+}
+
+li:nth-of-type(4) a {
+    color: #34495e;
 }
 
 h3:nth-of-type(2) {
