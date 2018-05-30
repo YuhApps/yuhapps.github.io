@@ -1,41 +1,50 @@
-/* @font-face{
+/*
+ @font-face {
     src: url(fonts/Roboto-Medium.ttf) format('truetype');
     font-family: 'Roboto';
     font-weight: normal;
-} */
+} 
+*/
 
-@font-face{
+@font-face {
     src: url(fonts/Roboto-Regular.ttf) format('truetype');
     font-family: 'Roboto';
-    font-weight: normal;
 }
 
-@font-face{
+@font-face {
     src: url(fonts/Roboto-Bold.ttf) format('truetype');
     font-family: 'Roboto';
     font-weight: bold;
 }
 
-@font-face{
+@font-face {
     src: url(fonts/Cookie-Regular.ttf) format('truetype');
     font-family: 'Cookie';
+}
+
+@font-face {
+    src: url(fonts/Product-Sans-Regular.ttf) format('truetype');
+    font-family: 'ProductSans';
+}
+
+@font-face {
+    src: url(fonts/Product-Sans-Bold.ttf) format('truetype');
+    font-family: 'ProductSans';
+    font-weight: bold;
 }
 
 * {
     font-family: 'Roboto';
 }
 
+:root {
+    --primary-color: #eb2e7afe
+}
+
 body {
-/*
-    background: #c53c73;
-    background: -webkit-linear-gradient(left, #F44336, #F44336, #9C27B0, #9C27B0);
-    background: -o-linear-gradient(right, #F44336, #F44336, #9C27B0, #9C27B0);
-    background: -moz-linear-gradient(right, #F44336, #F44336, #9C27B0, #9C27B0);
-*/
-    background: #c53c73;
-    background: linear-gradient(to right, #F44336, #F44336, #9C27B0, #9C27B0);
-    margin: 0;
-    padding: 48px;
+    background: var(--primary-color);
+    margin: auto;
+    padding: 5vh 10vw;
     text-align: center;
 }
 
@@ -51,24 +60,27 @@ h3 {
     font-weight: bold;
 }
 
+h4 {
+    color: #fff;
+}
+
 a {
     color: white;
     font-family: 'Roboto';
     font-weight: bold;
-    /*font-size: 15px;*/
-    /*padding-bottom: 12px;
-    padding-top: 6px;*/
 }
 
 ul {
     list-style: none;
-    margin: 0;
+    margin: auto;
+    max-width: 1200px;
     padding: 0;
+    text-align: center;
 }
 
 li {
     display: inline-block;
-    margin: auto;
+    margin: 20px;
     padding: 0;
     position: relative;
     text-align: justify;
@@ -96,19 +108,20 @@ li div {
 
 li h3 {
     color: #000;
+    font-family: 'ProductSans';
     margin-bottom: 0;
     margin-top: 0;
+    text-align: left;
 }
 
 li a {
-    bottom: 6px;
-    font-family: 'Roboto';
-    font-weight: bold;
-    position: absolute;
+    text-decoration: none;
 }
 
 li p {
+    color: black;
     font-size: 16px;
+    font-weight: normal;
 }
 
 li:nth-of-type(1) a {
@@ -128,38 +141,56 @@ li:nth-of-type(4) a {
 }
 
 h3:nth-of-type(2) {
-    margin-top: 60px;
+    margin-top: 120px;
 }
 
 h3:nth-of-type(3) {
     margin-top: 60px;
 }
 
+h3 span {
+    border-bottom:  2px solid white; padding: 5px 10px
+}
+
+#fp {
+    margin-top: 10vh;
+}
+
 #logo {
+    font-family: 'ProductSans';
     margin: auto;
-    margin-bottom: 90px;
+    margin-bottom: 1vh;
 }
 
 #logo h1 {
-    bottom: 0;
     color: white;
+    font-family: 'ProductSans';
+    margin: 0;
     font-size: 60px;
     text-align: center;
-    top: 0;
 }
 
-#logo:after {
-    clear: both;
-    content: "";
-    display: block;
+#logo h3 {
+    font-family: 'ProductSans';
+}
+
+#logo h4 {
+    font-family: 'ProductSans';
+    font-style: italic;
+    margin-top: 1vh;
+}
+
+#vn {
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 #privacy-policy {
-  margin: auto;
-  margin-bottom: 48px;
-  padding: 24px;
-  position: relative;
-  width: 1200px;
+    margin: auto;
+    margin-bottom: 48px;
+    padding: 24px;
+    position: relative;
+    width: 1200px;
 }
 
 .card {
@@ -183,10 +214,25 @@ h3:nth-of-type(3) {
 
 .app-content {
     margin: auto;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
+    margin-top: 24px;
     padding: 5vw;
-    position: relative;
-    width: 1200px;
+}
+
+.back {
+    background: var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2),
+        0 9px 24px 0 rgba(0, 0, 0, 0.2);
+    font-family: 'ProductSans';
+    font-size: 24px;
+    padding: 10px 20px;
+    position: static;
+    text-decoration: none;
+}
+
+.highlight {
+    font-weight: bold;
 }
 
 .google-play {
@@ -202,14 +248,18 @@ h3:nth-of-type(3) {
     width: 96px;
 }
 
+.primary-text {
+    color: var(--primary-color);
+}
+
 @media screen and (max-width: 1280px) {
 
     h3:nth-of-type(2) {
         margin-top: 30px;
     }
-
-    h3:nth-of-type(3) {
-        margin-top: 30px;
+    
+    li:last-of-type {
+        margin: 40px;
     }
 
     #privacy-policy, .app-content {
@@ -223,25 +273,21 @@ h3:nth-of-type(3) {
 
 @media screen and (max-width: 640px) {
 
-    #logo {
-        margin: auto;
-        width: 320px;
-    }
-
-    #logo img {
-        float: left;
-        height: 96px;
-        width: 96px;
-    }
-
     #logo h1 {
         font-size: 48px;
-        /*line-height: 36px;*/
+    }
+    
+    #logo h4 {
+        font-size: 14px;
     }
 
     li {
         height: 108px;
         width: 384px;
+    }
+    
+    li:last-of-type {
+        margin: 10px;
     }
 
     li img {
@@ -260,6 +306,10 @@ h3:nth-of-type(3) {
     li p {
         margin-top: 6px;
     }
+    
+    p {
+        font-size: 16px;
+    }
 
     .google-play img {
         width: 256px;
@@ -276,21 +326,17 @@ h3:nth-of-type(3) {
     body {
         padding: 12px;
     }
+    
+    p {
+        font-size: 15px;
+    }
 
     #logo {
         margin: auto;
-        width: 240px;
-    }
-
-    #logo img {
-        float: left;
-        height: 60px;
-        width: 60px;
     }
 
     #logo h1 {
         font-size: 36px;
-        /*line-height: 12px;*/
     }
 
     h3 {
@@ -333,7 +379,7 @@ h3:nth-of-type(3) {
     }
 
     #privacy-policy, .app-content {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     .app-icon {
