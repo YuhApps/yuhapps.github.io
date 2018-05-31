@@ -53,6 +53,10 @@ p {
     text-align: justify;
 }
 
+h1 {
+    color: #fff;
+}
+
 h3 {
     color: #fff;
     font-family: 'Roboto';
@@ -344,7 +348,7 @@ h3 span {
     }
 
     li {
-        height: 108px;
+        height: 100px;
         margin-left: auto;
         margin-right: auto;
         width: 80%;
@@ -352,7 +356,8 @@ h3 span {
 
     li img {
         height: 60px;
-        margin-top: 6.25%;
+        margin-top: 5%;
+        vertical-align: middle;
         width: 60px;
     }
 
@@ -360,10 +365,12 @@ h3 span {
         height: 120px;
         margin-left: 72px;
         margin-right: 24px;
+        vertical-align: middle;
     }
 
     li h3 {
-       font-size: 20px;
+        font-size: 19px;
+        margin-top: 10px;
     }
 
     li p {
