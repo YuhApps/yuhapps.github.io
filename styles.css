@@ -3,7 +3,7 @@
     src: url(fonts/Roboto-Medium.ttf) format('truetype');
     font-family: 'Roboto';
     font-weight: normal;
-} 
+}
 */
 
 @font-face {
@@ -37,15 +37,12 @@
     font-family: 'Roboto';
 }
 
-:root {
-    --primary-color: #eb2e7afe
-}
-
 body {
     background: var(--primary-color);
     margin: auto;
     padding: 5vh 10vw;
     text-align: center;
+    --primary-color: #eb2e7afe;
 }
 
 p {
@@ -261,7 +258,7 @@ h3 span {
     h3:nth-of-type(2) {
         margin-top: 30px;
     }
-    
+
     li:last-of-type {
         margin: 40px;
     }
@@ -280,7 +277,7 @@ h3 span {
     #logo h1 {
         font-size: 48px;
     }
-    
+
     #logo h4 {
         font-size: 14px;
     }
@@ -289,7 +286,7 @@ h3 span {
         height: 108px;
         width: 384px;
     }
-    
+
     li:last-of-type {
         margin: 10px;
     }
@@ -310,7 +307,7 @@ h3 span {
     li p {
         margin-top: 6px;
     }
-    
+
     p {
         font-size: 16px;
     }
@@ -330,7 +327,7 @@ h3 span {
     body {
         padding: 12px;
     }
-    
+
     p {
         font-size: 15px;
     }

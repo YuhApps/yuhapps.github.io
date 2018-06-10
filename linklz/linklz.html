@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link href="icon.png" rel="icon">
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linklz</title>
+    </head>
+    <body>
+        <header>
+            <span>LINKLZ</span>
+        </header>
+        <main class="card">
+            <p>What exactly does <span class="primary bold" style="font-family: 'ProductSans'">Linklz</span> do? It simply helps you <span class="primary bold">eliminate
+              </span>annnoying tracking parameters in URL so the target website in the URL finds it harder to track your activity, for example:
+              <i>http://www.example.com/<span class="primary">?utm_source=somewhere</span>&hl=en <span class="accent bold">&nbsp;&nbsp;➡&nbsp;&nbsp;
+              </span> http://www.example.com/&hl=en</i></p>
+            <p>You can also <span class="primary bold">shorten</span> the URL after getting rid of those params. Though that elimination is not perfect, it just makes
+              the tracking process become more difficult. The recommended method is shorten URL after removing the tracking params.</p>
+            <input id="input" type="text" placeholder="Paste URL here"/><br />
+            <input id="output" type="text" placeholder="New URL will be here" readonly/>
+            <div id="buttons">
+              <button onclick="removeTrackingParams()">Remove Tracking params</button>
+              <button onclick="shortenUrl()">Shorten URL</button>
+              <button class="btn-primary" onclick="removeTrackingParamsAndShortenUrl()">Remove Tracking params and Shorten URL</button>
+            </div>
+            <br><br>
+            <p class="accent bold">(?) QUICK HELP (/?)</p>
+            <p><span class="primary bold">Remove tracking params</span> only removes things such as "utm_source", "clickfrom" and "ref" and keeps other non-tracking params
+              like "q=your+query", "id=123abc" and "hl=en" like what you can see in the example above.</p>
+            <p>URL shortener is powered by <strong><a class="accent" href="https://is.gd">https://is.gd</a></strong>. Special thanks to Mr. Richard West for his amazing work,
+              and <strong><a class="accent" href="https://www.memset.com/?source=is-gd-site">Memset</a></strong> who their awesome support that makes is.gd free of charge.
+            </p>
+            <p>Once you press a button above, processed link will be automatically copied.</p>
+            <p><span class="accent bold">Coming soon:</span> QR generator.</p>
+
+        </main>
+        <footer style="margin-bottom: 40px; margin-top: 80px">
+            <a class="back" href="/" style="">Developed by <strong>YuhApps</strong></a>
+        </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
