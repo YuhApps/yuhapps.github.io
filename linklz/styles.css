@@ -150,8 +150,9 @@ p {
 #output {
     border: none;
     color: var(--primary-color);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
+    vertical-align: middle;
 }
 
 #buttons {

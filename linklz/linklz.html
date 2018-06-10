@@ -18,7 +18,8 @@
             <p>You can also <span class="primary bold">shorten</span> the URL after getting rid of those params. Though that elimination is not perfect, it just makes
               the tracking process become more difficult. The recommended method is shorten URL after removing the tracking params.</p>
             <input id="input" type="text" placeholder="Paste URL here"/><br />
-            <input id="output" type="text" placeholder="New URL will be here" readonly/>
+            <p class="accent" style="text-align: center">⬇⬇⬇⬇⬇⬇</p>
+            <input id="output" type="text" readonly  placeholder="New URL will be here"/>
             <div id="buttons">
               <button onclick="removeTrackingParams()">Remove Tracking params</button>
               <button onclick="shortenUrl()">Shorten URL</button>
@@ -31,7 +32,7 @@
             <p>URL shortener is powered by <strong><a class="accent" href="https://is.gd">https://is.gd</a></strong>. Special thanks to Mr. Richard West for his amazing work,
               and <strong><a class="accent" href="https://www.memset.com/?source=is-gd-site">Memset</a></strong> who their awesome support that makes is.gd free of charge.
             </p>
-            <p>Once you press a button above, processed link will be automatically copied.</p>
+            <p>Auto copy does not work with HttpRquest, so please manually do copy on your own. If it were possible, I'd have done implementation already. Sorry.</p>
             <p><span class="accent bold">Coming soon:</span> QR generator.</p>
 
         </main>

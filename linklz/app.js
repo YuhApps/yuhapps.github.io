@@ -4,7 +4,6 @@ const defaultRegex = ["clickfrom", "pf_pd", "ref", "sku", "source", "spm", "utm"
 
 function removeTrackingParams() {
     output.value = removeTrackingParamsInternal()
-    copyOutput()
 }
 
 function removeTrackingParamsInternal() {
@@ -17,20 +16,20 @@ function removeTrackingParamsInternal() {
         let finalParams = ""
         if (trackingParams.length > 0) {
             let removals = []
-            defaultRegex.forEach((regex) => {
-                trackingParams.forEach((trackingParam) => {
+            defaultRegex.forEach(function(regex) {
+                trackingParams.forEach(function(trackingParam) {
                     if (trackingParam.indexOf(regex) > -1) {
                         removals.push(trackingParam)
                     }
                 })
             })
-            removals.forEach((removal) => {
+            removals.forEach(function(removal) {
                 let i = trackingParams.indexOf(removal)
                 if (i > -1) {
                     trackingParams.splice(i, 1)
                 }
             })
-            trackingParams.forEach((trackingParam, index) => {
+            trackingParams.forEach(function(trackingParam, index) {
                 finalParams += (index == 0 ? "?" : "&") + trackingParam
             })
         }
@@ -44,16 +43,33 @@ function removeTrackingParamsInternal() {
 function shortenUrl() {
     let url = encodeURI(input.value)
     let reqStr = `https://is.gd/create.php?format=json&url=${url}`
-    sendHttpRequest(reqStr).then((result) => { output.value = JSON.parse(result).shorturl; copyOutput() }).catch((error) => console.log(error))
+    // sendHttpRequest(reqStr).then((result) => { output.value = JSON.parse(result).shorturl; copyOutput() }).catch((error) => console.log(error))
+    sendHttpRequest(reqStr, function(err, result) { output.value = JSON.parse(result).shorturl; output.select() })
 }
 
 function removeTrackingParamsAndShortenUrl() {
     let url = encodeURI(removeTrackingParamsInternal())
     let reqStr = `https://is.gd/create.php?format=json&url=${url}`
-    sendHttpRequest(reqStr).then((result) => output.value = JSON.parse(result).shorturl).catch((error) => console.log(error))
+    // sendHttpRequest(reqStr).then((result) => { output.value = JSON.parse(result).shorturl; copyOutput() }).catch((error) => console.log(error))
+    sendHttpRequest(reqStr, function(err, result) { output.value = JSON.parse(result).shorturl; output.select() })
 }
 
-function sendHttpRequest(reqStr) {
+async function sendHttpRequest(reqStr, callback) {
+  if (callback) {
+    let request = new XMLHttpRequest()
+    request.onload = function() {
+        if (request.status == 200) {
+            callback(null, this.responseText)
+        } else {
+            callback(this.statusText, null)
+        }
+    }
+    request.onerror = function() {
+        callback(this.statusText, null)
+    }
+    request.open("GET", reqStr, true)
+    request.send()
+  } else {
     return new Promise((resolve, reject) => {
         let request = new XMLHttpRequest()
         request.onload = function() {
@@ -62,17 +78,18 @@ function sendHttpRequest(reqStr) {
           } else {
             reject(this.statusText)
           }
-        };
+        }
         request.onerror = function() {
           reject(this.statusText)
         }
         request.open("GET", reqStr, true)
         request.send()
     })
+  }
 }
 
 function copyOutput() {
     output.select()
-    document.execCommand("copy")
+    console.log(document.execCommand("copy"))
     window.getSelection().removeAllRanges()
 }
