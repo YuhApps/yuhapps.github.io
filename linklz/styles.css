@@ -52,7 +52,7 @@ header {
 main {
     margin: 5vh auto;
     max-width: 1400px;
-    padding: 20px;
+    padding: 5vh 1vh;
     width: 90%;
 }
 
@@ -187,11 +187,12 @@ p {
     }
 
     main {
-        padding: 20px 10px;
+        /* padding: 20px 10px; */
     }
 
     input {
         font-size: 16px;
+        margin: auto;
     }
 
     p {
@@ -216,7 +217,11 @@ p {
 @media screen and (max-width: 500px) {
 
     main {
-        padding: 10px 5px;
+        /* padding: 10px 5px; */
+    }
+
+    p {
+        width: 85%;
     }
 
     button {
@@ -231,7 +236,9 @@ p {
 @media screen and (max-width: 400px) {
 
     input {
-        width: auto;
+        margin: auto;
+        padding: 10px;
+        width: 80%;
     }
 
     button {
