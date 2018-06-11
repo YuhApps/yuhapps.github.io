@@ -5,10 +5,20 @@ const defaultRegex = ["clickfrom", "pf_pd", "ref", "sku", "source", "spm", "utm"
 document.addEventListener("DOMContentLoaded", function(ev) {
     input.onkeyup = function(e) { output.value = "" }
     input.onpaste = function(e) { output.value = "" }
+    document.querySelectorAll("p")[2].innerHTML = (navigator.clipboard)
+              ? "Your browser supports auto copy. New URL will be auto copied once you hit a button below."
+              : "Your browser does not support auto copy. Auto copy is supported in " +
+                "<a href='https://www.google.com/chrome' target='_blank'>Chrome</a> and Chromium-based browsers."
 })
 
 function removeTrackingParams() {
-    output.value = removeTrackingParamsInternal()
+    let url = removeTrackingParamsInternal()
+    output.value = url
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url)
+    } else {
+        output.select()
+    }
 }
 
 function removeTrackingParamsInternal() {
@@ -59,7 +69,7 @@ function removeTrackingParamsAndShortenUrl() {
     sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
-function sendHttpRequest(reqStr, callback) {
+async function sendHttpRequest(reqStr, callback) {
   if (callback) {
     let request = new XMLHttpRequest()
     request.onload = function() {
@@ -98,7 +108,11 @@ function processResultFomIsGd(err, result) {
     let url  = json.shorturl
     if (url) {
       output.value = url
-      output.select()
+      if (navigator.clipboard) {
+          navigator.clipboard.writeText(url)
+      } else {
+          output.select()
+      }
     } else {
       alert(json.errormessage + "(error code: " + json.errorcode + ")")
     }

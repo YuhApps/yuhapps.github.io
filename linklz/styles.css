@@ -109,6 +109,15 @@ p {
     word-wrap: break-word;
 }
 
+a, a:active {
+    color: var(--primary-color);
+}
+
+footer {
+    margin-bottom: 40px;
+    margin-top: 80px;
+}
+
 .card {
     background: white;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
@@ -228,23 +237,37 @@ p {
         width: 300px;
     }
 
+    footer {
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
     .btn-primary {
         width: 300px;
+    }
+
+    .back {
+        font-size: 18px;
     }
 }
 
 @media screen and (max-width: 400px) {
 
     input {
+        font-size: 15px;
         margin: auto;
         padding: 10px;
         width: 80%;
     }
 
+    p {
+        font-size: 15px;
+    }
+
     button {
         margin: 5px auto;
         max-width: 240px;
-        padding: 10 20px;
+        padding: 10px 20px;
         width: auto;
     }
 
@@ -260,5 +283,25 @@ p {
     #output {
         margin: 15px auto;
         margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    input {
+        font-size: 14px;
+        margin: auto;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 13px;
+        margin: 5px 0;
+        min-width: 0;
+        padding: 10px 20px;
+        width: 340px;
     }
 }

@@ -153,6 +153,11 @@ h3 span {
     border-bottom:  2px solid white; padding: 5px 10px
 }
 
+footer {
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+}
+
 #fp {
     margin-top: 10vh;
 }
@@ -311,6 +316,11 @@ h3 span {
     p {
         font-size: 16px;
     }
+
+    /* footer {
+        margin-bottom: 10px;
+        margin-top: 40px;
+    } */
 
     .google-play img {
         width: 256px;
