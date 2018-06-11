@@ -100,8 +100,8 @@ function processResultFomIsGd(err, result) {
       output.value = url
       output.select()
     } else {
-      alert(json.errormessage} + "(error code: " + json.errorcode + ")")
-  }
+      alert(json.errormessage + "(error code: " + json.errorcode + ")")
+    }
 }
 
 function showAlert(err) {
