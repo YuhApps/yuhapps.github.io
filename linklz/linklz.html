@@ -6,6 +6,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Linklz</title>
+        <script>
+            if (!Promise) window.location = 'get-browsers.html'
+        </script>
     </head>
     <body>
         <header>
@@ -14,32 +17,36 @@
         <main class="card">
             <p>What exactly does <span class="primary bold" style="font-family: 'ProductSans'">Linklz</span> do? It simply helps you <span class="primary bold">eliminate
               </span>annnoying tracking parameters in URL so the target website in the URL finds it harder to track your activity, for example:
-              <i>http://www.example.com/<span class="primary">?utm_source=somewhere</span>&hl=en <span class="accent bold">&nbsp;&nbsp;➡&nbsp;&nbsp;
-              </span> http://www.example.com/&hl=en</i></p>
+              <i>http://www.example.com/<span class="primary">?utm_source=somewhere</span>&amp;hl=en <span class="accent bold">&nbsp;&nbsp;➡&nbsp;&nbsp;
+              </span> http://www.example.com/&amp;hl=en</i></p>
             <p>You can also <span class="primary bold">shorten</span> the URL after getting rid of those params. Though that elimination is not perfect, it just makes
               the tracking process become more difficult. The recommended method is shorten URL after removing the tracking params.</p>
             <p></p>
+            <p><span class="accent bold">QR generator</span> is based on the New URL. If New URL field is empty, it will use Input URL instead.</p>
             <input id="input" type="text" placeholder="Paste URL here"/><br />
             <p class="accent" style="text-align: center">⬇⬇⬇⬇⬇⬇</p>
             <input id="output" type="text" readonly  placeholder="New URL will be here"/>
+            <div id="qr"></div>
+            <br>
             <div id="buttons">
-              <button onclick="removeTrackingParams()">Remove Tracking params</button>
-              <button onclick="shortenUrl()">Shorten URL</button>
-              <button class="btn-primary" onclick="removeTrackingParamsAndShortenUrl()">Remove Tracking params and Shorten URL</button>
+              <button>CLEAN URL</button>
+              <button>SHORTEN URL</button>
+              <button class="btn-primary">CLEAN AND SHORTEN URL</button>
+              <button class="btn-primary">GENERATE QR CODE</button>
             </div>
             <br><br>
             <p class="accent bold">(?) QUICK HELP (/?)</p>
-            <p><span class="primary bold">Remove tracking params</span> only removes things such as "utm_source", "clickfrom" and "ref" and keeps other non-tracking params
+            <p><span class="primary bold">Clean URL</span> only removes things such as "utm_source", "clickfrom" and "ref" and keeps other non-tracking params
               like "q=your+query", "id=123abc" and "hl=en" like what you can see in the example above.</p>
-            <p>URL shortener is powered by <strong><a class="accent" href="https://is.gd">https://is.gd</a></strong>. Special thanks to Mr. Richard West for his amazing work,
-              and <strong><a class="accent" href="https://www.memset.com/?source=is-gd-site">Memset</a></strong> who their awesome support that makes is.gd free of charge.
+            <p>URL shortener is powered by <strong><a class="accent" href="https://is.gd">https://is.gd</a></strong>. Special thanks to
+              <strong class="accent">Mr. Richard West</strong> for his amazing work, and <strong><a class="accent" href="https://www.memset.com/?source=is-gd-site">
+              Memset</a></strong> who their awesome support that makes is.gd free of charge. QR generator is provided by <strong class="accent">Mr. David Shim</strong>.
             </p>
-            <p><span class="accent bold">Coming soon:</span> QR generator.</p>
-
         </main>
         <footer>
             <a class="back" href="/" style="">Developed by <strong>YuhApps</strong></a>
         </footer>
+        <script src="qrcode.min.js"></script>
         <script src="app.js"></script>
     </body>
 </html>

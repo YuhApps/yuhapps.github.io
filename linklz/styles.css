@@ -45,13 +45,14 @@ header {
     font-weight: bold;
     padding: 20px;
     position: sticky;
+    position: --webkit-sticky;
     top: 0;
     z-index: 2;
 }
 
 main {
     margin: 5vh auto;
-    max-width: 1400px;
+    max-width: 1500px;
     padding: 5vh 1vh;
     width: 90%;
 }
@@ -85,17 +86,16 @@ button {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    margin: 5px 15px;
-    min-width: 300px;
-    padding: 10px 30px;
+    margin: 5px 10px;
+    min-width: 260px;
+    padding: 10px 20px;
     text-align: center;
     text-transform: uppercase;
-
 }
 
 button:active {
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    /* border: 2px solid var(--accent-color); */
+    background: var(--accent-color);
 }
 
 button:focus {
@@ -130,7 +130,9 @@ footer {
 }
 
 .btn-primary:active {
-    border: 2px solid var(--primary-color);
+    /* border: 2px solid var(--primary-color); */
+    background: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .primary {
@@ -164,27 +166,43 @@ footer {
     vertical-align: middle;
 }
 
+#qr, #qr img {
+    margin: auto;
+    width: 256px;
+}
+
 #buttons {
     margin: 20px auto;
 }
 
-/* @media screen and (max-width: 1510px) {
-    .btn-primary {
-
-    }
-
-    #buttons {
-
-    }
-} */
-
 @media screen and (max-width: 1510px) {
-    .btn-primary {
-        width: 630px;
+
+    button {
+        margin: 5px 20px;
+        min-width: 320px;
     }
 
     #buttons {
-        max-width: 1100px;
+        max-width: 825px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    button {
+        min-width: 260px;
+    }
+
+}
+
+@media screen and (max-width: 960px) {
+
+    button {
+        margin: 5px 10px;
+    }
+
+    #qr, #qr img {
+        width: 192px;
     }
 }
 
@@ -195,10 +213,6 @@ footer {
         padding: 15px;
     }
 
-    main {
-        /* padding: 20px 10px; */
-    }
-
     input {
         font-size: 16px;
         margin: auto;
@@ -209,12 +223,8 @@ footer {
     }
 
     button {
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px 20px;
-        width: 400px;
-    }
-
-    .btn-primary {
         width: 400px;
     }
 
@@ -225,34 +235,6 @@ footer {
 
 @media screen and (max-width: 500px) {
 
-    main {
-        /* padding: 10px 5px; */
-    }
-
-    p {
-        width: 85%;
-    }
-
-    button {
-        width: 300px;
-    }
-
-    footer {
-        margin-bottom: 20px;
-        margin-top: 40px;
-    }
-
-    .btn-primary {
-        width: 300px;
-    }
-
-    .back {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-
     input {
         font-size: 15px;
         margin: auto;
@@ -262,18 +244,22 @@ footer {
 
     p {
         font-size: 15px;
+        width: 85%;
     }
 
     button {
         margin: 5px auto;
-        max-width: 240px;
+        max-width: 250px;
         padding: 10px 20px;
-        width: auto;
     }
 
-    .btn-primary {
-        max-width: 240px;
-        width: auto;
+    footer {
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .back {
+        font-size: 18px;
     }
 
     #buttons {
@@ -284,9 +270,13 @@ footer {
         margin: 15px auto;
         margin-bottom: 30px;
     }
+
+    #qr, #qr img {
+        width: 128px;
+    }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
 
     input {
         font-size: 14px;
@@ -302,6 +292,5 @@ footer {
         margin: 5px 0;
         min-width: 0;
         padding: 10px 20px;
-        width: 340px;
     }
 }

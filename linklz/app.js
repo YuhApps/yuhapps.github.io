@@ -1,17 +1,39 @@
 const input = document.querySelector("#input")
 const output = document.querySelector("#output")
 const defaultRegex = ["clickfrom", "pf_pd", "ref", "sku", "source", "spm", "utm"]
+const buttons = document.querySelectorAll("button")
+const button_0 = buttons[0]
+const button_1 = buttons[1]
+const button_2 = buttons[2]
+const button_3 = buttons[3]
+const qr = document.querySelector("#qr")
 
 document.addEventListener("DOMContentLoaded", function(ev) {
-    input.onkeyup = function(e) { output.value = "" }
-    input.onpaste = function(e) { output.value = "" }
+    input.onkeyup = reset
+    input.onpaste = reset
+    button_0.onclick = removeTrackingParams
+    button_1.onclick = shortenUrl
+    button_2.onclick = removeTrackingParamsAndShortenUrl
+    button_3.onclick = generateQR
     document.querySelectorAll("p")[2].innerHTML = (navigator.clipboard)
               ? "Your browser supports auto copy. New URL will be auto copied once you hit a button below."
               : "Your browser does not support auto copy. Auto copy is supported in " +
-                "<a href='https://www.google.com/chrome' target='_blank'>Chrome</a> and Chromium-based browsers."
+                "<a href='https://www.google.com/chrome' target='_blank'>Chrome</a> and Chromium-based browsers " +
+                "for computer and Android."
 })
 
-function removeTrackingParams() {
+function reset(e) {
+    output.value = ""
+    button_0.textContent = "CLEAN URL"
+    button_0.classList.remove("btn-primary")
+    qr.innerHTML = ""
+}
+
+function removeTrackingParams(e) {
+    if (input.value.trim() == "") {
+        alert("Please enter a URL")
+        return
+    }
     let url = removeTrackingParamsInternal()
     output.value = url
     if (navigator.clipboard) {
@@ -22,7 +44,7 @@ function removeTrackingParams() {
 }
 
 function removeTrackingParamsInternal() {
-    let text = input.value
+    let text = input.value.trim()
     let url = ""
     let indexOfQuestionMark = text.indexOf("?")
     if (indexOfQuestionMark > -1) {
@@ -56,17 +78,27 @@ function removeTrackingParamsInternal() {
 }
 
 function shortenUrl() {
-    let url = encodeURI(input.value)
+    if (input.value.trim() == "") {
+        alert("Please enter a URL")
+        return
+    }
+    let url = encodeURI(input.value.trim())
     let reqStr = "https://is.gd/create.php?format=json&url=" + url
-    // sendHttpRequest(reqStr).then((result) => { output.value = JSON.parse(result).shorturl; copyOutput() }).catch((error) => console.log(error))
-    sendHttpRequest(reqStr, processResultFomIsGd)
+    output.setAttribute("placeholder", "Sending request, please wait...")
+    sendHttpRequest(reqStr).then(processResultFomIsGd).catch((error) => alert(error))
+//    sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
 function removeTrackingParamsAndShortenUrl() {
+    if (input.value.trim() == "") {
+        alert("Please enter a URL")
+        return
+    }
     let url = encodeURI(removeTrackingParamsInternal())
     let reqStr = "https://is.gd/create.php?format=json&url=" + url
-    // sendHttpRequest(reqStr).then((result) => { output.value = JSON.parse(result).shorturl; copyOutput() }).catch((error) => console.log(error))
-    sendHttpRequest(reqStr, processResultFomIsGd)
+    output.setAttribute("placeholder", "Sending request, please wait...")
+    sendHttpRequest(reqStr).then(processResultFomIsGd).catch((error) => alert(error))
+//    sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
 async function sendHttpRequest(reqStr, callback) {
@@ -74,13 +106,13 @@ async function sendHttpRequest(reqStr, callback) {
     let request = new XMLHttpRequest()
     request.onload = function() {
         if (request.status == 200) {
-            callback(null, this.responseText)
+            callback(this.responseText)
         } else {
-            callback(this.statusText, null)
+            callback(this.statusText)
         }
     }
     request.onerror = function() {
-        callback(this.statusText, null)
+        callback(this.statusText)
     }
     request.open("GET", reqStr, true)
     request.send()
@@ -103,25 +135,33 @@ async function sendHttpRequest(reqStr, callback) {
   }
 }
 
-function processResultFomIsGd(err, result) {
+function processResultFomIsGd(result) {
     let json = JSON.parse(result)
     let url  = json.shorturl
     if (url) {
-      output.value = url
-      if (navigator.clipboard) {
+        output.value = url
+        if (navigator.clipboard) {
           navigator.clipboard.writeText(url)
-      } else {
+        } else {
           output.select()
-      }
+        }
     } else {
-      alert(json.errormessage + "(error code: " + json.errorcode + ")")
+        alert(json.errormessage + " (error code: " + json.errorcode + ")")
+    }
+    output.setAttribute("placeholder", "New URL will be here")
+}
+
+function generateQR() {
+    if (input.value.trim() == "") {
+        alert("Please enter a URL")
+    } else if (qr.querySelectorAll("img").length == 0) {
+        new QRCode(qr, output.value == "" ? input.value.trim() : output.value)
     }
 }
 
-function showAlert(err) {
-    alert(err)
-}
-
+/**
+ * Not in use
+ */
 function isUrlValid() {
     // Thanks to https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
     let pattern = new RegExp(
