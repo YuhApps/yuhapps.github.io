@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Linklz</title>
         <script>
-            if (!Promise) window.location = 'get-browsers.html'
+            if (navigator.userAgent.indexOf("MSIE ") > -1 || navigator.userAgent.indexOf("Trident/") > -1) { window.location = 'get-browsers.html' }
         </script>
     </head>
     <body>
@@ -15,12 +15,16 @@
             <span>LINKLZ</span>
         </header>
         <main class="card">
-            <p>What exactly does <span class="primary bold" style="font-family: 'ProductSans'">Linklz</span> do? It simply helps you <span class="primary bold">eliminate
-              </span>annnoying tracking parameters in URL so the target website in the URL finds it harder to track your activity, for example:
-              <i>http://www.example.com/<span class="primary">?utm_source=somewhere</span>&amp;hl=en <span class="accent bold">&nbsp;&nbsp;➡&nbsp;&nbsp;
-              </span> http://www.example.com/&amp;hl=en</i></p>
+            <p>What exactly does <span class="primary bold" style="font-family: 'ProductSans'">Linklz</span> do? It simply helps you remove URL redirection,
+              for example <i>https://somewhere.net/<span class="primary">?url=https%3A%2F%2Fwww.example.com</span></i><span class="accent bold">
+              &nbsp;&nbsp;➡&nbsp;&nbsp;</span><i>https://www.example.com</i>, and also <span class="primary bold">eliminate </span>annnoying tracking parameters in URL
+              so the target website in the URL finds it harder to track your activity, like:
+              <i>http://www.example.com/<span class="primary">?utm_source=somewhere</span>&amp;hl=en<span class="accent bold">&nbsp;&nbsp;➡&nbsp;&nbsp;
+              </span> http://www.example.com/&amp;hl=en</i>.</p>
             <p>You can also <span class="primary bold">shorten</span> the URL after getting rid of those params. Though that elimination is not perfect, it just makes
-              the tracking process become more difficult. The recommended method is shorten URL after removing the tracking params.</p>
+              the tracking process become more difficult. The recommended method is shorten URL after cleaning. Then you can share the newly processed link on social networks
+              like Twitter and Instagram, or generate QR Code based on it.
+            </p>
             <p></p>
             <p><span class="accent bold">QR generator</span> is based on the New URL. If New URL field is empty, it will use Input URL instead.</p>
             <input id="input" type="text" placeholder="Paste URL here"/><br />
@@ -39,7 +43,7 @@
             <p><span class="primary bold">Clean URL</span> only removes things such as "utm_source", "clickfrom" and "ref" and keeps other non-tracking params
               like "q=your+query", "id=123abc" and "hl=en" like what you can see in the example above.</p>
             <p>URL shortener is powered by <strong><a class="accent" href="https://is.gd">https://is.gd</a></strong>. Special thanks to
-              <strong class="accent">Mr. Richard West</strong> for his amazing work, and <strong><a class="accent" href="https://www.memset.com/?source=is-gd-site">
+              <strong class="accent">Mr. Richard West</strong> for his amazing work, and <strong><a class="accent" href="https://www.memset.com/?source=yuhapps">
               Memset</a></strong> who their awesome support that makes is.gd free of charge. QR generator is provided by <strong class="accent">Mr. David Shim</strong>.
             </p>
         </main>

@@ -1,6 +1,6 @@
 const input = document.querySelector("#input")
 const output = document.querySelector("#output")
-const defaultRegex = ["clickfrom", "pf_pd", "ref", "sku", "source", "spm", "utm"]
+const defaultRegex = ["clickfrom", "pf_pd", "ref", "sku", "source", "spm", "utm", "key"]
 const buttons = document.querySelectorAll("button")
 const button_0 = buttons[0]
 const button_1 = buttons[1]
@@ -9,9 +9,9 @@ const button_3 = buttons[3]
 const qr = document.querySelector("#qr")
 
 document.addEventListener("DOMContentLoaded", function(ev) {
-    input.onkeyup = reset
-    input.onpaste = reset
-    button_0.onclick = removeTrackingParams
+    input.oninput = reset
+    // input.onpaste = reset
+    button_0.onclick = cleanUrl
     button_1.onclick = shortenUrl
     button_2.onclick = removeTrackingParamsAndShortenUrl
     button_3.onclick = generateQR
@@ -29,6 +29,16 @@ function reset(e) {
     qr.innerHTML = ""
 }
 
+function cleanUrl(e) {
+    // https://disq.us/?url=https%3A%2F%2Fwww.omgubuntu.co.uk%2F2018%2F06%2Fnat-friedman-ama-microsoft-github-deal&key=Ym7FL2CHZEFbRuUM9nphQg
+    let qurl = input.value.indexOf("?url=")
+    if (qurl > -1) {
+        input.value = decodeURIComponent(input.value.slice(qurl + 5, input.value.length))
+        console.log(input.value)
+    }
+    removeTrackingParams(e)
+}
+
 function removeTrackingParams(e) {
     if (input.value.trim() == "") {
         alert("Please enter a URL")
@@ -38,18 +48,45 @@ function removeTrackingParams(e) {
     output.value = url
     if (navigator.clipboard) {
         navigator.clipboard.writeText(url)
+        qr.innerHTML = "Text copied"
     } else {
         output.select()
     }
 }
 
+// TODO: Reduce lines of code by merging two if's below
 function removeTrackingParamsInternal() {
     let text = input.value.trim()
     let url = ""
     let indexOfQuestionMark = text.indexOf("?")
+    let indexOfAmp = text.indexOf("&")
     if (indexOfQuestionMark > -1) {
         url = text.slice(0, indexOfQuestionMark)
         let trackingParams = text.slice(indexOfQuestionMark + 1, text.length).split("&")
+        let finalParams = ""
+        if (trackingParams.length > 0) {
+            let removals = []
+            defaultRegex.forEach(function(regex) {
+                trackingParams.forEach(function(trackingParam) {
+                    if (trackingParam.indexOf(regex) > -1) {
+                        removals.push(trackingParam)
+                    }
+                })
+            })
+            removals.forEach(function(removal) {
+                let i = trackingParams.indexOf(removal)
+                if (i > -1) {
+                    trackingParams.splice(i, 1)
+                }
+            })
+            trackingParams.forEach(function(trackingParam, index) {
+                finalParams += (index == 0 ? "?" : "&") + trackingParam
+            })
+        }
+        url += finalParams
+    } else if (indexOfAmp > -1) {
+        url = text.slice(0, indexOfAmp)
+        let trackingParams = text.slice(indexOfAmp + 1, text.length).split("&")
         let finalParams = ""
         if (trackingParams.length > 0) {
             let removals = []
@@ -101,7 +138,7 @@ function removeTrackingParamsAndShortenUrl() {
 //    sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
-async function sendHttpRequest(reqStr, callback) {
+function sendHttpRequest(reqStr, callback) {
   if (callback) {
     let request = new XMLHttpRequest()
     request.onload = function() {
@@ -141,9 +178,10 @@ function processResultFomIsGd(result) {
     if (url) {
         output.value = url
         if (navigator.clipboard) {
-          navigator.clipboard.writeText(url)
+            navigator.clipboard.writeText(url)
+            qr.innerHTML = "Text copied"
         } else {
-          output.select()
+            output.select()
         }
     } else {
         alert(json.errormessage + " (error code: " + json.errorcode + ")")
@@ -152,10 +190,17 @@ function processResultFomIsGd(result) {
 }
 
 function generateQR() {
-    if (input.value.trim() == "") {
-        alert("Please enter a URL")
-    } else if (qr.querySelectorAll("img").length == 0) {
-        new QRCode(qr, output.value == "" ? input.value.trim() : output.value)
+    let i = input.value.trim()
+    let o = output.value
+    qr.innerHTML = ""
+    if (o == "") {
+        if (i == "") {
+            alert("Please enter a URL")
+        } else {
+            new QRCode(qr, i)
+        }
+    } else {
+        new QRCode(qr, o)
     }
 }
 

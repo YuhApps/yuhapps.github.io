@@ -167,6 +167,7 @@ footer {
 }
 
 #qr, #qr img {
+    color: var(--accent-color);
     margin: auto;
     width: 256px;
 }
