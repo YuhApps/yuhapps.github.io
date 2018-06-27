@@ -1,6 +1,6 @@
 const input = document.querySelector("#input")
 const output = document.querySelector("#output")
-const defaultRegex = ["clickfrom", "pf_pd", "ref", "sku", "source", "spm", "utm", "key"]
+const defaultRegex = ["clickfrom", "pf_pd", "ref", "pref", "sref", "sku", "source", "spm", "utm", "key", "xguid", "xuuid", "xsessid", "xcreo", "xed", "xtz"]
 const buttons = document.querySelectorAll("button")
 const button_0 = buttons[0]
 const button_1 = buttons[1]
@@ -10,7 +10,7 @@ const qr = document.querySelector("#qr")
 
 document.addEventListener("DOMContentLoaded", function(ev) {
     input.oninput = reset
-    // input.onpaste = reset
+    input.onchange = function(e) { cleanUrl(e); setTimeout(function() { generateQR() }, 500); }
     button_0.onclick = cleanUrl
     button_1.onclick = shortenUrl
     button_2.onclick = removeTrackingParamsAndShortenUrl
@@ -31,10 +31,9 @@ function reset(e) {
 
 function cleanUrl(e) {
     // https://disq.us/?url=https%3A%2F%2Fwww.omgubuntu.co.uk%2F2018%2F06%2Fnat-friedman-ama-microsoft-github-deal&key=Ym7FL2CHZEFbRuUM9nphQg
-    let qurl = input.value.indexOf("?url=")
+    let qurl = input.value.lastIndexOf("url=")
     if (qurl > -1) {
-        input.value = decodeURIComponent(input.value.slice(qurl + 5, input.value.length))
-        console.log(input.value)
+        input.value = decodeURIComponent(input.value.slice(qurl + 4 , input.value.length))
     }
     removeTrackingParams(e)
 }
@@ -122,8 +121,8 @@ function shortenUrl() {
     let url = encodeURI(input.value.trim())
     let reqStr = "https://is.gd/create.php?format=json&url=" + url
     output.setAttribute("placeholder", "Sending request, please wait...")
-    sendHttpRequest(reqStr).then(processResultFomIsGd).catch((error) => alert(error))
-//    sendHttpRequest(reqStr, processResultFomIsGd)
+    // sendHttpRequest(reqStr).then(processResultFomIsGd).catch((error) => alert(error))
+   sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
 function removeTrackingParamsAndShortenUrl() {
@@ -134,8 +133,8 @@ function removeTrackingParamsAndShortenUrl() {
     let url = encodeURI(removeTrackingParamsInternal())
     let reqStr = "https://is.gd/create.php?format=json&url=" + url
     output.setAttribute("placeholder", "Sending request, please wait...")
-    sendHttpRequest(reqStr).then(processResultFomIsGd).catch((error) => alert(error))
-//    sendHttpRequest(reqStr, processResultFomIsGd)
+    // sendHttpRequest(reqStr).then(processResultFomIsGd).catch((error) => alert(error))
+    sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
 function sendHttpRequest(reqStr, callback) {

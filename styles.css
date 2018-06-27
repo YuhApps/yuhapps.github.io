@@ -74,15 +74,15 @@ a {
 ul {
     list-style: none;
     margin: auto;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     padding: 0;
     text-align: center;
 }
 
 li {
     display: inline-block;
-    margin: 20px;
-    padding: 0;
+    margin: 20px 30px;
+    padding: 20px;
     position: relative;
     text-align: justify;
     text-overflow: ellipsis;
@@ -204,8 +204,8 @@ footer {
     border-radius: 3px;
     box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2),
         0 9px 24px 0 rgba(0, 0, 0, 0.2);
-    margin: 18px;
-    padding: 18px;
+    /* margin: 18px;
+    padding: 18px; */
 }
 
 .app-icon {
@@ -258,10 +258,30 @@ footer {
     color: var(--primary-color);
 }
 
+@media screen and (max-width: 1440px) {
+
+    li {
+        width: 460px;
+    }
+
+    li h3 {
+        font-size: 28px;
+    }
+}
+
 @media screen and (max-width: 1280px) {
 
     h3:nth-of-type(2) {
         margin-top: 30px;
+    }
+
+    li {
+        margin: 20px 20px;
+        width: 430px;
+    }
+
+    li p {
+        font-size: 16px;
     }
 
     li:last-of-type {
@@ -288,7 +308,7 @@ footer {
     }
 
     li {
-        height: 108px;
+        /* height: 108px; */
         width: 384px;
     }
 
@@ -307,6 +327,7 @@ footer {
 
     li h3 {
        font-size: 20px;
+       margin-top: 6px;
     }
 
     li p {

@@ -207,6 +207,15 @@ footer {
     }
 }
 
+/* @media screen and (max-width: 850px) and (max-height: 420px) {
+
+    header {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+} */
+
 @media screen and (max-width: 785px) {
 
     header {
@@ -294,4 +303,50 @@ footer {
         min-width: 0;
         padding: 10px 20px;
     }
+}
+
+@media screen and (max-height: 420px) {
+
+    header {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    input {
+        font-size: 14px;
+        margin: auto;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 13px;
+        margin: 8px 8px;
+        min-width: 0;
+        padding: 8px;
+        width: 240px;
+    }
+
+    .back {
+        font-size: 15px;
+    }
+
+    #output {
+        margin: 0 auto;
+    }
+
+    #buttons {
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-height: 360px) {
+
+    button {
+        width: 210px;
+    }
+
 }
