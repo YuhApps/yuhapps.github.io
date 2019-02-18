@@ -38,11 +38,10 @@
 }
 
 body {
-    background: var(--primary-color);
+    background: #eb2e7afe;
     margin: auto;
     padding: 5vh 10vw;
     text-align: center;
-    --primary-color: #eb2e7afe;
 }
 
 p {
@@ -226,7 +225,7 @@ footer {
 }
 
 .back {
-    background: var(--primary-color);
+    background: #eb2e7afe;
     border-radius: 20px;
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2),
         0 9px 24px 0 rgba(0, 0, 0, 0.2);
@@ -255,7 +254,7 @@ footer {
 }
 
 .primary-text {
-    color: var(--primary-color);
+    color: #eb2e7afe;
 }
 
 @media screen and (max-width: 1440px) {
