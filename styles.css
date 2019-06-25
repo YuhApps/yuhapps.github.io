@@ -37,391 +37,120 @@
     font-family: 'Roboto';
 }
 
-body {
-    margin: auto;
-    padding: 5vh 10vw;
-    text-align: center;
-}
+ h1 {
+     color: white;
+ }
 
-p {
-    font-size: 18px;
-    text-align: justify;
-}
+ .prd-sans {
+     font-family: 'ProductSans';
+ }
 
-h1 {
-    color: #fff;
-}
-
-h3 {
-    color: #fff;
-    font-family: 'Roboto';
-    font-size: 30px;
+.bold-text {
     font-weight: bold;
 }
 
-h4 {
-    color: #fff;
-}
-
-a {
-    color: white;
-    font-family: 'Roboto';
-    font-weight: bold;
-}
-
-ul {
-    list-style: none;
+.wrapper {
     margin: auto;
-    /* max-width: 1200px; */
-    padding: 0;
-    text-align: center;
-}
-
-li {
-    display: inline-block;
-    margin: 20px 30px;
-    padding: 20px;
-    position: relative;
-    text-align: justify;
-    text-overflow: ellipsis;
-    width: 512px;
-}
-
-li img {
-    float: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 128px;
-}
-
-li div {
-    bottom: 0;
-    height: 128px;
-    margin-bottom: auto;
-    margin-left: 144px;
-    margin-right: 24px;
-    margin-top: auto;
-    position: absolute;
-    top: 0;
-}
-
-li h3 {
-    color: #000;
-    font-family: 'ProductSans';
-    margin-bottom: 0;
-    margin-top: 0;
-    text-align: left;
-}
-
-li a {
-    text-decoration: none;
-}
-
-li p {
-    color: black;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-li:nth-of-type(1) a {
-    color: #34495e;
-}
-
-li:nth-of-type(2) a {
-    color: #d35400;
-}
-
-li:nth-of-type(3) a {
-    color: #2f343e;
-}
-
-li:nth-of-type(4) a {
-    color: #34495e;
-}
-
-h3:nth-of-type(2) {
-    margin-top: 120px;
-}
-
-h3:nth-of-type(3) {
-    margin-top: 60px;
-}
-
-h3 span {
-    border-bottom:  2px solid white; padding: 5px 10px
-}
-
-footer {
-    margin-bottom: 3vh;
-    margin-top: 5vh;
-}
-
-#fp {
-    margin-top: 10vh;
-}
-
-#logo {
-    font-family: 'ProductSans';
-    margin: auto;
-    margin-bottom: 1vh;
-}
-
-#logo h1 {
-    color: white;
-    font-family: 'ProductSans';
-    margin: 0;
-    font-size: 60px;
-    text-align: center;
-}
-
-#logo h3 {
-    font-family: 'ProductSans';
-}
-
-#logo h4 {
-    font-family: 'ProductSans';
-    font-style: italic;
-    margin-top: 1vh;
-}
-
-#vn {
-    font-size: 20px;
-    text-decoration: underline;
-}
-
-#privacy-policy {
-    margin: auto;
-    margin-bottom: 48px;
+    max-width: 1280px;
     padding: 24px;
-    position: relative;
-    width: 1200px;
 }
 
 .card {
-    background: white;
-    border-radius: 3px;
-    box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.2),
-        0 9px 24px 0 rgba(0, 0, 0, 0.2);
-    /* margin: 18px;
-    padding: 18px; */
+    min-height: 200px;
+    padding: 12px;
 }
 
-.app-icon {
-    left: 50%;
-    margin-left: -96px;
-    margin-top: -96px;
-    opacity: 0.15;
-    position: absolute;
-    top: 50%;
-    width: 192px;
-}
-
-.app-content {
-    margin: auto;
-    margin-bottom: 48px;
-    margin-top: 24px;
-    padding: 5vw;
-}
-
-.back {
-    background: #eb2e7afe;
-    border-radius: 20px;
-    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2),
-        0 9px 24px 0 rgba(0, 0, 0, 0.2);
-    font-family: 'ProductSans';
-    font-size: 24px;
-    padding: 10px 20px;
-    position: static;
-    text-decoration: none;
-}
-
-.highlight {
+.card .card-title {
     font-weight: bold;
+    font-size: 30px;
 }
 
-.google-play {
-    width: auto;
+.card p {
+    font-size: 17px;
+    text-align: justify;
+}
+
+.nav-wrapper {
+    background: #E8286F;
+}
+
+.cat {
+    color: #E8286F;
+    font-weight: bold;
+    padding: 0px 12px;
+    text-decoration: underline;
+}
+
+.index-img {
+    height: 128px;
+    max-width: 128px;
+    min-width: 128px;
+    width: 128px;
 }
 
 .google-play img {
-    width: 384px;
+    width: 240px;
 }
 
-.main-page {
-    margin-top: 64px;
-    width: 96px;
+.app-content {
+    padding: 48px !important;
 }
 
-.primary-text {
-    color: #eb2e7afe;
+.yuh-apps {
+    background: #E8286F;
+    border-radius: 32px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 12px 24px !important;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1050px) {
 
-    li {
-        width: 460px;
+    .card {
+        min-height: 220px;
     }
 
-    li h3 {
-        font-size: 28px;
-    }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 992px) {
 
-    h3:nth-of-type(2) {
-        margin-top: 30px;
+    .card {
+        min-height: 0px;
     }
 
-    li {
-        margin: 20px 20px;
-        width: 430px;
-    }
-
-    li p {
-        font-size: 16px;
-    }
-
-    li:last-of-type {
-        margin: 40px;
-    }
-
-    #privacy-policy, .app-content {
-        width: auto;
-    }
-
-    .google-play img {
-        width: 320px;
-    }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
 
-    #logo h1 {
-        font-size: 48px;
+    h4.cat {
+        font-size: 2rem;
     }
 
-    #logo h4 {
-        font-size: 14px;
-    }
-
-    li {
-        /* height: 108px; */
-        width: 384px;
-    }
-
-    li:last-of-type {
-        margin: 10px;
-    }
-
-    li img {
-        width: 96px;
-    }
-
-    li div {
-        height: 120px;
-        margin-left: 108px;
-    }
-
-    li h3 {
-       font-size: 20px;
-       margin-top: 6px;
-    }
-
-    li p {
-        margin-top: 6px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    /* footer {
-        margin-bottom: 10px;
-        margin-top: 40px;
-    } */
-
-    .google-play img {
-        width: 256px;
-    }
-
-    .main-page {
-        margin-top: 32px;
-        width: 64px;
-    }
-}
-
-@media screen and (max-width: 460px) {
-
-    body {
+    .card {
         padding: 12px;
     }
 
-    p {
-        font-size: 15px;
+    .card .card-content {
+        padding: 12px;
     }
 
-    #logo {
-        margin: auto;
+    .card .card-title {
+        font-size: 18px;
+    }
+    .card p {
+        font-size: 16px;
+        text-align: justify;
     }
 
-    #logo h1 {
-        font-size: 36px;
+    .index-img {
+        height: 64px;
+        max-width: 64px;
+        min-width: 64px;
+        width: 64px;
     }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    li {
-        height: 100px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-    }
-
-    li img {
-        height: 60px;
-        margin-top: 5%;
-        vertical-align: middle;
-        width: 60px;
-    }
-
-    li div {
-        height: 120px;
-        margin-left: 72px;
-        margin-right: 24px;
-        vertical-align: middle;
-    }
-
-    li h3 {
-        font-size: 19px;
-        margin-top: 10px;
-    }
-
-    li p {
-        font-size: 15px;
-        margin-top: 6px;
-        max-height: 52px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-
-    li a {
-        font-size: 15px;
-    }
-
-    #privacy-policy, .app-content {
-        font-size: 10px;
-    }
-
-    .app-icon {
-        margin-left: -64px;
-        margin-top: -64px;
-        width: 128px;
-    }
-
-    .google-play img {
-        width: 192px;
+    
+    .app-content {
+        padding: 12px !important;
     }
 }
