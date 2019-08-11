@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/b64.png" rel="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Base64 Encoder & Decoder</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper green center">
+            <a class="center bold-text prd-sans">BASE64 Encoder & Decoder</a>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <input type="text" id="inp" placeholder="Input text (UTF-8)">
+        <input type="text" id="key" placeholder="Key to encode/decode (optional)">
+        <div class="center">
+            <button class="btn green" id="enc">Base 64 Encode</button>
+            <button class="btn green" id="dec">Base 64 Decode</button>
+        </div>
+        <input type="text" id="out" placeholder="Output goes here" readonly>
+        <div class="card">
+            <h5>What is this tool?</h5>
+            <p>
+                As the name already suggests, <span class="yuh">Yuh Apps'</span> <span class="green-text bold-text">Base64 Encoder & Decoder</span>
+                helps you easily encode a String, with an optional key to XOR the characters, and of course, the opposite which decodes a Base64
+                String with the provided key.
+            </p>
+            <p>
+                For example, encode <span class="green-text">'Hello World'</span> will give you <span class="green-text">'SGVsbG8gV29ybGQ='</span>
+                without the key, or <span class="green-text">'KQkcBA5BOx8aDQU='</span> with the key as <span class="green-text">'alpha'</span>.
+            </p>
+            <p>
+                This tool is compatible with other languages like Java and Swift. That means if you encode a String here then decode using a Java or
+                Swift program, you'll get the exact same result.
+            </p>
+        </div>
+    </div>
+    <div class="center">
+        <a class="back prd-sans" href="/">Developed by <strong>YuhApps</strong></a>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

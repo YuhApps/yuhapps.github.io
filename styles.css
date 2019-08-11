@@ -96,6 +96,11 @@
     padding: 48px !important;
 }
 
+.yuh {
+    color: #E8286F;
+    font-weight: bold;
+}
+
 .yuh-apps {
     background: #E8286F;
     border-radius: 32px;
@@ -103,14 +108,6 @@
     font-size: 26px;
     font-weight: bold;
     padding: 12px 24px !important;
-}
-
-@media screen and (max-width: 1050px) {
-
-    .card {
-        min-height: 220px;
-    }
-
 }
 
 @media screen and (max-width: 992px) {
