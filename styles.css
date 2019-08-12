@@ -74,6 +74,10 @@
     background: #E8286F;
 }
 
+.nav-wrapper a {
+    font-size: 28px;
+}
+
 .cat {
     color: #E8286F;
     font-weight: bold;
