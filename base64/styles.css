@@ -1,10 +1,3 @@
-input {
-    padding: 4px 24px !important;
-    width: calc(100% - 48px) !important;
-}
-input::placeholder {
-    color: #a0a0a0;
-}
 div.center {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -16,6 +9,20 @@ div.card {
 div.nav-wrapper {
     margin-bottom: 0;
     margin-top: 0;
+}
+textarea {
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 60px;
+    overflow: hidden;
+    padding: 20px;
+    resize: none;
+}
+textarea:focus, textarea:active {
+    border-bottom: 2px solid #4caf50;
+    outline: none;
 }
 .wrapper {
     margin-top: 20px;

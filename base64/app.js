@@ -3,9 +3,29 @@ const key = document.querySelector("#key")
 const out = document.querySelector("#out")
 const enc = document.querySelector("#enc")
 const dec = document.querySelector("#dec")
+const clr = document.querySelector("#clr")
+const cpy = document.querySelector("#cpy")
 
-enc.onclick = function() { out.value = encodeUnicode(inp.value, key.value) }
-dec.onclick = function() { out.value = decodeUnicode(inp.value, key.value) }
+inp.onkeyup = function() { autoIncreaseHeight(inp) }
+key.onkeyup = function() { autoIncreaseHeight(key) }
+out.onkeyup = function() { autoIncreaseHeight(out) }
+
+enc.onclick = function() {
+    out.value = encodeUnicode(inp.value, key.value)
+    autoIncreaseHeight(out)
+}
+dec.onclick = function() {
+    out.value = decodeUnicode(inp.value, key.value)
+    autoIncreaseHeight(out)
+}
+clr.onclick = function() {
+    out.value = ""
+    autoIncreaseHeight(out)
+}
+cpy.onclick = function() {
+    out.select()
+    document.execCommand('copy')
+}
 
 function encodeUnicode(inp, key) {
     if (key == null) return inp
@@ -27,4 +47,9 @@ function xorStrings(inp, key) {
         out += String.fromCharCode(c ^ k)
     }
     return out
+}
+
+function autoIncreaseHeight(textarea) {
+    textarea.style.height = "60px";
+    textarea.style.height = (textarea.scrollHeight) + "px";
 }

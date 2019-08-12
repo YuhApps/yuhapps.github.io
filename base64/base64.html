@@ -17,13 +17,17 @@
         </div>
     </nav>
     <div class="wrapper">
-        <input type="text" id="inp" placeholder="Input text (UTF-8)">
-        <input type="text" id="key" placeholder="Key to encode/decode (optional)">
+        <textarea type="text" id="inp" placeholder="Input text (UTF-8)"></textarea>
+        <textarea type="text" id="key" placeholder="Key to XOR (optional)"></textarea>
         <div class="center">
             <button class="btn green" id="enc">Base64 Encode</button>
             <button class="btn green" id="dec">Base64 Decode</button>
         </div>
-        <input type="text" id="out" placeholder="Output goes here" readonly>
+        <textarea type="text" id="out" placeholder="Output goes here" readonly></textarea>
+        <div class="center">
+            <button class="btn green" id="clr">Clear output</button>
+            <button class="btn green" id="cpy">Copy output</button>
+        </div>
         <div class="card">
             <h5>What is this tool?</h5>
             <p>
