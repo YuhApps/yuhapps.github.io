@@ -8,8 +8,8 @@ enc.onclick = function() { out.value = encodeUnicode(inp.value, key.value) }
 dec.onclick = function() { out.value = decodeUnicode(inp.value, key.value) }
 
 function encodeUnicode(inp, key) {
-    if (key == null) return data
-    else if (key !== "") data = xorStrings(key, inp)
+    if (key == null) return inp
+    else if (key !== "") inp = xorStrings(key, inp)
     return btoa(inp)
 }
 
