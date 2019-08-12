@@ -15,7 +15,7 @@ function encodeUnicode(inp, key) {
 
 function decodeUnicode(inp, key) {
     if (key == null) return inp
-    inp = base64Decode(inp)
+    inp = atob(inp)
     return key === "" ? inp : xorStrings(inp, key)
 }
 
