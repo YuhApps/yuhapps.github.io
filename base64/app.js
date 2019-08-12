@@ -4,31 +4,27 @@ const out = document.querySelector("#out")
 const enc = document.querySelector("#enc")
 const dec = document.querySelector("#dec")
 
-enc.onclick = function(e) { out.value = encodeUnicode(key.value, inp.value) }
-dec.onclick = function(e) { out.value = decodeUnicode(key.value, inp.value) }
+enc.onclick = function() { out.value = encodeUnicode(inp.value, key.value) }
+dec.onclick = function() { out.value = decodeUnicode(inp.value, key.value) }
 
-function encodeUnicode(key, data) {
+function encodeUnicode(inp, key) {
     if (key == null) return data
-    else if (key !== "") data = xorStrings(key, data)
-    return btoa(data)
+    else if (key !== "") data = xorStrings(key, inp)
+    return btoa(inp)
 }
 
-function decodeUnicode(key, data) {
-    if (key == null || key === '') return data
-    try {
-        data = atob(data)
-        return  xorStrings(key, data)
-    } catch (e) {
-        return "Malformed input"
-    }
+function decodeUnicode(inp, key) {
+    if (key == null) return inp
+    inp = base64Decode(inp)
+    return key === "" ? inp : xorStrings(inp, key)
 }
 
-function xorStrings(key, input) {
-    let output = ''
-    for (var i = 0; i < input.length; i++){
-        var c = input.charCodeAt(i)
+function xorStrings(inp, key) {
+    let out = ''
+    for (var i = 0; i < inp.length; i++){
+        var c = inp.charCodeAt(i)
         var k = key.charCodeAt(i % key.length)
-        output += String.fromCharCode(c ^ k)
+        out += String.fromCharCode(c ^ k)
     }
-    return output
+    return out
 }
