@@ -2,20 +2,15 @@ const input = document.querySelector("#input")
 const output = document.querySelector("#output")
 const defaultRegex = ["clickfrom", "pf_pd", "ref", "pref", "sref", "sku", "source", "spm", "utm", "key", "xguid", "xuuid", "xsessid", "xcreo", "xed", "xtz"]
 const buttons = document.querySelectorAll("button")
-const button_0 = buttons[0]
-const button_1 = buttons[1]
-const button_2 = buttons[2]
-const button_3 = buttons[3]
 const qr = document.querySelector("#qr")
 
 document.addEventListener("DOMContentLoaded", function(ev) {
     input.oninput = reset
-    input.onchange = function(e) { cleanUrl(e); setTimeout(function() { generateQR() }, 500); }
-    button_0.onclick = cleanUrl
-    button_1.onclick = shortenUrl
-    button_2.onclick = removeTrackingParamsAndShortenUrl
-    button_3.onclick = generateQR
-    document.querySelectorAll("p")[2].innerHTML = (navigator.clipboard)
+    buttons[0].onclick = cleanUrl
+    buttons[1].onclick = shortenUrl
+    buttons[2].onclick = cleanAndShortenUrl
+    buttons[3].onclick = generateQR
+    document.querySelectorAll("p")[1].innerHTML = (navigator.clipboard)
               ? "Your browser supports auto copy. New URL will be auto copied once you hit a button below."
               : "Your browser does not support auto copy. Auto copy is supported in " +
                 "<a href='https://www.google.com/chrome' target='_blank'>Chrome</a> and Chromium-based browsers " +
@@ -24,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function(ev) {
 
 function reset(e) {
     output.value = ""
-    button_0.textContent = "CLEAN URL"
-    button_0.classList.remove("btn-primary")
     qr.innerHTML = ""
 }
 
@@ -33,7 +26,7 @@ function cleanUrl(e) {
     // https://disq.us/?url=https%3A%2F%2Fwww.omgubuntu.co.uk%2F2018%2F06%2Fnat-friedman-ama-microsoft-github-deal&key=Ym7FL2CHZEFbRuUM9nphQg
     let qurl = input.value.lastIndexOf("url=")
     if (qurl > -1) {
-        input.value = decodeURIComponent(input.value.slice(qurl + 4 , input.value.length))
+        input.value = decodeURIComponent(input.value.slice(qurl + 4, input.value.length))
     }
     removeTrackingParams(e)
 }
@@ -125,7 +118,7 @@ function shortenUrl() {
    sendHttpRequest(reqStr, processResultFomIsGd)
 }
 
-function removeTrackingParamsAndShortenUrl() {
+function cleanAndShortenUrl() {
     if (input.value.trim() == "") {
         alert("Please enter a URL")
         return
