@@ -2,14 +2,17 @@ div.center {
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
 div.card {
     margin-top: 40px;
     padding: 12px 24px !important;
 }
+
 div.nav-wrapper {
     margin-bottom: 0;
     margin-top: 0;
 }
+
 textarea {
     border: none;
     border-bottom: 2px solid #e0e0e0;
@@ -20,25 +23,20 @@ textarea {
     padding: 20px;
     resize: none;
 }
+
 textarea:focus, textarea:active {
     border-bottom: 2px solid #4caf50;
     outline: none;
 }
+
 .wrapper {
     margin-top: 20px;
 }
+
 .btn {
     margin: 20px;
 }
-.back {
-    background: #eb2e7a;
-    border-radius: 20px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-    color: white;
-    font-size: 24px;
-    padding: 10px 20px;
-    text-decoration: none;
-}
+
 @media screen and (max-width: 600px) {
     div.nav-wrapper a {
         font-size: 20px;
@@ -48,8 +46,5 @@ textarea:focus, textarea:active {
     }
     .btn {
         margin: 20px 8px;
-    }
-    .back {
-        font-size: 18px;
     }
 }

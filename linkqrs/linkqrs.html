@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <link href="icon.png" rel="icon">
+    <link href="/linkqrs.png" rel="icon">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#3f51b5">
     <link rel="stylesheet" href="/materialize.css">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="styles.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linklz</title>
+    <title>LinkQRs</title>
     <script>
         if (navigator.userAgent.indexOf("MSIE ") > -1 || navigator.userAgent.indexOf("Trident/") > -1) { window.location = 'get-browsers.html' }
     </script>
@@ -19,7 +20,7 @@
         </div>
     </nav>
     <div class="wrapper">
-		<div class="card">
+		<div class="card center">
 			<p>
 				<b><span class="prd-sans indigo-text">LinQRs</span></b> is a simple URL cleaner, shortener and QR generator.
 				It helps you remove annoying URL tracking parameters such as <i>?utm_source</i>, <i>?source</i> and <i>?ref</i> as well as
@@ -29,7 +30,8 @@
 			<input id="input" type="text" placeholder="Paste URL here"/><br />
 			<p class="cyan-text accent-4" style="text-align: center">⬇⬇⬇⬇⬇⬇</p>
 			<input id="output" type="text" readonly  placeholder="New URL will be here"/>
-			<div id="qr"></div>
+			<br>
+			<div class="center cyan-text accent-4" id="qr"></div>
 			<br>
 			<div class="row" id="buttons">
 				<div class="button-wrapper col s12 m6 l3">
@@ -46,14 +48,15 @@
 				</div>
 			</div>
 			<br><br>
-			<p>URL shortener is powered by <strong><a class="cyan-text accent-4" href="https://is.gd" target="_blank">https://is.gd</a></strong>. Special thanks to
+			<p>
+				URL shortener is powered by <strong><a class="cyan-text accent-4" href="https://is.gd" target="_blank">https://is.gd</a></strong>. Special thanks to
 				<b class="indigo-text">Mr. Richard West</b> for his amazing work, and <b><a class="indigo-text" href="https://www.memset.com/?source=yuhapps">
-				Memset</a></b> who their awesome support that makes is.gd free of charge. QR generator is provided by <b class="indigo-text">Mr. David Shim</b>.
+				Memset</a></b> whose awesome support that makes is.gd free of charge. QR generator is provided by <b class="indigo-text">Mr. David Shim</b>.
 			</p>
 		</div>
 	</div>
     <div class="center">
-        <a class="back" href="/">Developed by <b class="prd-sans">YuhApps</b></a>
+        <a class="back prd-sans" href="/">Developed by <b class="prd-sans" style="font-weight: bold">YuhApps</b></a>
     </div>
     <script src="qrcode.min.js"></script>
     <script src="app.js"></script>

@@ -37,13 +37,13 @@
     font-family: 'Roboto';
 }
 
- h1 {
-     color: white;
- }
+h1 {
+    color: white;
+}
 
- .prd-sans {
-     font-family: 'ProductSans';
- }
+.prd-sans {
+    font-family: 'ProductSans';
+}
 
 .bold-text {
     font-weight: bold;
@@ -51,7 +51,7 @@
 
 .wrapper {
     margin: auto;
-    max-width: 1280px;
+    max-width: 1296px;
     padding: 24px;
 }
 
@@ -83,7 +83,22 @@
 }
 
 .gray {
-    background: #2f343e;
+    background: #2f343e !important;
+}
+
+.highlight {
+    color: #2f343e;
+    font-weight: bold;
+}
+
+.back {
+    background: #eb2e7a;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    text-decoration: none;
 }
 
 .cat {
@@ -166,5 +181,9 @@
     
     .app-content {
         padding: 12px !important;
+    }
+
+    .back {
+        font-size: 18px;
     }
 }

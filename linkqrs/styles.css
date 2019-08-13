@@ -1,19 +1,9 @@
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    --primary-color: #303f9f;
-    --accent-color: #00b8d4;
-}
-
 input {
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
-    margin: 20px;
+    margin: 20px auto;
     padding: 10px 20px;
-    position: relative;
     text-align: center;
     width: 90% !important;
 }
@@ -34,8 +24,8 @@ p {
     word-wrap: break-word;
 }
 
-a, a:active {
-    color: var(--primary-color);
+div.center {
+    margin-bottom: 20px;
 }
 
 .btn {
@@ -46,39 +36,18 @@ div.button-wrapper {
     margin-bottom: 12px;
 }
 
-.primary {
-    color: var(--primary-color);
-}
-
-.accent{
-    color: var(--accent-color);
-}
-
 .bold {
     font-weight: bold;
 }
 
-.back {
-    background: #eb2e7afe;
-    border-radius: 20px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-    color: white;
-    font-family: 'ProductSans';
-    font-size: 24px;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-
 #output {
     border: none;
-    color: var(--primary-color);
     margin-bottom: 20px;
     text-align: center;
     vertical-align: middle;
 }
 
 #qr, #qr img {
-    color: var(--accent-color);
     margin: auto;
     width: 256px;
 }
