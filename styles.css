@@ -147,6 +147,10 @@ h1 {
         font-size: 28px;
     }
 
+    .back {
+        font-size: 20px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {

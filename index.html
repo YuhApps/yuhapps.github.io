@@ -12,6 +12,26 @@
         a {
             color: black;
         }
+        #footer a {
+            display: inline-block;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        @media screen and (max-width: 1024px) {
+            #footer a {
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            #footer a {
+                font-size: 16px;
+                text-align: center;
+            }
+            #footer a:first-child {
+                margin-bottom: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,8 +164,9 @@
                 </p>
             </div>
         </div>
-        <div class="row center">
-            <a class="card white-text" href="https://www.facebook.com/yuhapps" style="background: #4469ae; border-radius: 20px; padding: 18px;" target="_blank">YUH APPS on Facebook</a>
+        <div class="center" id="footer">
+            <a class="back" href="https://www.facebook.com/yuhapps" style="background: #4469ae;" target="_blank">YuhApps on Facebook</a>
+            <a class="back" href="https://materializecss.com" style="background: #E35F66;" target="_blank">MaterializeCSS</a>
         </div>
     </div>
 </body>
