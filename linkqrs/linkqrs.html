@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="/materialize.css">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="/materialize.js"></script>
     <title>LinkQRs</title>
-    <script>
-        if (navigator.userAgent.indexOf("MSIE ") > -1 || navigator.userAgent.indexOf("Trident/") > -1) { window.location = 'get-browsers.html' }
-    </script>
 </head>
 <body>
     <nav>
@@ -22,7 +20,7 @@
     <div class="wrapper">
 		<div class="card center">
 			<p>
-				<b><span class="prd-sans indigo-text">LinQRs</span></b> is a simple URL cleaner, shortener and QR generator.
+				<b><span class="prd-sans indigo-text"><span class="yuh">YuhApps' </span>LinQRs</span></b> is a simple URL cleaner, shortener and QR generator.
 				It helps you remove annoying URL tracking parameters such as <i>?utm_source</i>, <i>?source</i> and <i>?ref</i> as well as
 				generate QR code based on the link.
 			</p>
@@ -35,16 +33,16 @@
 			<br>
 			<div class="row" id="buttons">
 				<div class="button-wrapper col s12 m6 l3">
-					<button class="btn cyan accent-4">CLEAN URL</button>
+					<button class="btn cyan accent-4 waves-effect waves-light">CLEAN URL</button>
 				</div>
 				<div class="button-wrapper col s12 m6 l3">
-					<button class="btn cyan accent-4">SHORTEN URL</button>
+					<button class="btn cyan accent-4 waves-effect waves-light">SHORTEN URL</button>
 				</div>
 				<div class="button-wrapper col s12 m6 l3">
-					<button class="btn indigo">CLEAN AND SHORTEN URL</button>
+					<button class="btn indigo waves-effect waves-light">CLEAN AND SHORTEN URL</button>
 				</div>
 				<div class="button-wrapper col s12 m6 l3">
-					<button class="btn indigo">GENERATE QR CODE</button>
+					<button class="btn indigo waves-effect waves-light">GENERATE QR CODE</button>
 				</div>
 			</div>
 			<br><br>
@@ -56,7 +54,7 @@
 		</div>
 	</div>
     <div class="center">
-        <a class="back prd-sans" href="/">Developed by <b class="prd-sans" style="font-weight: bold">YuhApps</b></a>
+        <a class="back prd-sans waves-effect waves-light" href="/">Developed by <b class="prd-sans" style="font-weight: bold">YuhApps</b></a>
     </div>
     <script src="qrcode.min.js"></script>
     <script src="app.js"></script>

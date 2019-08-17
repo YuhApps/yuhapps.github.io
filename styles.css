@@ -129,12 +129,16 @@ h1 {
 }
 
 .yuh-apps {
-    background: #E8286F;
+    background: rgb(232, 40, 111);
     border-radius: 32px;
     color: white;
     font-size: 26px;
     font-weight: bold;
     padding: 12px 24px !important;
+}
+
+.waves-effect.waves-y .waves-ripple{
+    background: rgba(211, 211, 211, 0.35);
 }
 
 @media screen and (max-width: 1024px) {

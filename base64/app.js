@@ -35,8 +35,12 @@ function encodeUnicode(inp, key) {
 
 function decodeUnicode(inp, key) {
     if (key == null) return inp
-    inp = atob(inp)
-    return key === "" ? inp : xorStrings(inp, key)
+    try {
+        inp = atob(inp)
+        return key === "" ? inp : xorStrings(inp, key)
+    } catch(e) {
+        return 'Malformed input 😕😕😕😕'
+    }
 }
 
 function xorStrings(inp, key) {
