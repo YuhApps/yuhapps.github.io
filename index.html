@@ -10,13 +10,8 @@
     <script src="materialize.js"></script>
     <title>YUH APPS</title>
     <style>
-        a {
-            color: black;
-        }
-        #footer a {
-            display: inline-block;
-            margin-left: 20px;
-            margin-right: 20px;
+        .wrapper {
+            text-align: center;
         }
         @media screen and (min-width: 1025px) {
             #last {
@@ -49,131 +44,20 @@
     </nav>
 
     <div class="wrapper">
-        <div class="row">
-            <div class="col s12 m10 offset-m1 l6">
-                <h4 class="cat prd-sans">Featured projects</h4>
-            </div>
-        </div>
-        <div class="row">
-            <a href="backup.html">
-                <div class="col s12 m10 offset-m1 l6">
-                    <div class="card horizontal waves-effect waves-y">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="backup_new.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Backup (Android)</span>
-                            <p>Back up and restore your Messages, Call logs, APKs and more.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="https://finelockupdatechecker.firebaseapp.com/" target="_blank">
-                <div class="col s12 m10 offset-m1 l6">
-                    <div class="card horizontal waves-effect waves-y">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="fine_lock.png" style="border-radius: 25%;">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">FineLock (Android)</span>
-                            <p>A simple launcher for Samsung's Good Lock modules. Requires Samsung phones.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="tap_tap.html">
-                <div class="col s12 m10 offset-m1 l6">
-                    <div class="card horizontal waves-effect waves-y">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="tap_tap.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Tap tap (Android)</span>
-                            <p>Just a simple tap tap game.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="antp.html">
-                <div class="col s12 m10 offset-m1 l6">
-                    <div class="card horizontal waves-effect waves-y">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="antp_new.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Simple NTP (Chrome&Edge)</span>
-                            <p>Give your browser's New Tab Page a fresh look.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="linkqrs.html" target="_blank">
-                <div class="col s12 m10 offset-m1 l6">
-                    <div class="card horizontal waves-effect waves-y">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="linkqrs.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">LinkQRs (Web)</span>
-                            <p>A URL cleaner, shortener and QR code generator.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="base64.html" target="_blank">
-                <div class="col s12 m10 offset-m1 l6">
-                    <div class="card horizontal waves-effect waves-y">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="b64.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Base64 Encoder & Decoder</span>
-                            <p>A simple online tool to encode and decode Strings.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="https://github.com/YuhApps/MaterialDesignColors" target="_blank">
-                <div class="col s12 m10 offset-m1 offset-l2 l8">
-                    <div class="card horizontal waves-effect waves-y" id="last">
-                        <div class="card-image valign-wrapper">
-                            <img class="index-img" src="mdc.png">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Material Design Color Palette</span>
-                            <p>Material Design Color palette helper files for Android
-                            (Java and Kotlin classes, as well as Color resources), Web (CSS & JS) and Inkscape.</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    
-        <div class="row" id="privacy-policy">
-            <div class="col s12 m10 offset-m1 l6">
-                <h4 class="cat prd-sans">Privacy policy</h4>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="card col s12 m10 offset-m1 l12" style="padding: 24px;">
-                <p>
-                    Apps made by <b class="prd-sans yuh">YUH APPS</b> don't collect your personal data. Therefore, all your data generated by my apps never leave your device
-                    unless you want them to. For example: you upload your call log backups to <b>Google Drive</b> or <b>Dropbox</b>. The upload progress is 
-                    handled by other apps. After sending an Intent which contains the Uris of your backups to these clients, BACK UP does nothing more.
-                </p>
-                <p>My projects are only distributed via <b>Google Play</b> and <b>Chrome Web Store</b> and my
-                    <b>GitHub repo</b>. Please get them from there instead of any other sources.</p>
-                <p>You take all responsibility to protect your personal data. Please always have apps from trusted sources, for example: <b>Google Play</b> or the marketplace provided by
-                    your device manufacturer like <b>Samsung Galaxy Store</b>. <b class="prd-sans yuh">YUH APPS</b> takes no responsibility for any data leaks caused by any other
-                    apps on your device, even those data were generated by my apps.
-                </p>
-            </div>
-        </div>
-        <div class="center" id="footer">
-            <a class="back waves-effect waves-light" href="https://www.facebook.com/yuhapps" style="background: #4469ae;" target="_blank">YuhApps on Facebook</a>
-            <a class="back waves-effect waves-light" href="https://materializecss.com" style="background: #E35F66;" target="_blank">MaterializeCSS</a>
-        </div>
+        <h5>The website has been moved to <a href="https://yuhapps.dev">https://yuhapps.dev</a></h5>
+        <h5>You'll be redirected in <span id="sec">10 seconds</span> ...</h5>
     </div>
+    <script>
+        let sec = 10;
+        const interval = setInterval(() => {
+            if (sec === 0) {
+                clearInterval(interval);
+                window.location = "https://yuhapps.dev";
+            } else {
+                sec -= 1;
+                document.querySelector("#sec").textContent = sec + " second" + (sec > 1 ? "s" : "");
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

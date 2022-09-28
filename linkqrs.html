@@ -1,12 +1,63 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="yuh_apps.png" rel="icon">
+    <meta name="google-site-verification" content="Mn4q3EjZRZe75EkxCTxxx1xLn2LRxE3mpZRFoS5bFP0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E8286F">
+    <link rel="stylesheet" href="materialize.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="materialize.js"></script>
+    <title>YUH APPS</title>
+    <style>
+        .wrapper {
+            text-align: center;
+        }
+        @media screen and (min-width: 1025px) {
+            #last {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            #footer a {
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            #footer a {
+                font-size: 16px;
+                text-align: center;
+            }
+            #footer a:first-child {
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper center">
+            <a class="center bold-text prd-sans">YUH APPS</a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <h5>The website has been moved to <a href="https://yuhapps.dev">https://yuhapps.dev</a></h5>
+        <h5>You'll be redirected in <span id="sec">10 seconds</span> ...</h5>
+    </div>
     <script>
-      window.location = "linkqrs/linkqrs.html"
+        let sec = 10;
+        const interval = setInterval(() => {
+            if (sec === 0) {
+                clearInterval(interval);
+                window.location = "https://yuhapps.dev";
+            } else {
+                sec -= 1;
+                document.querySelector("#sec").textContent = sec + " second" + (sec > 1 ? "s" : "");
+            }
+        }, 1000);
     </script>
-  </body>
+</body>
 </html>
